@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Image to PDF";
+}
+
+<!--Gives us a form to upload files to. The parameters shown below (Home) and (ConvertToPDF) refer to
+    the controller and the function to be exicuted in the controller.-->
+<form method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="ConvertToPDF">
+    <div class="form-group">
+        <div class="col-md-10">
+            <p><h4>Enter the name of your PDF:</h4></p>
+            <!--The name attribute is the parameter we are passing into our function.-->
+            <input type="text" name="fileName" multiple accept="image/*">
+            <p><h4>Select one or more images (JPG/BMP):</h4></p>
+            <!--The name attribute is the parameter we are passing into our function.-->
+            <input type="file" name="images" multiple accept="image/*">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-10">
+            <br />
+            <input type="submit" value="Convert to PDF">
+        </div>
+    </div>
+</form>
+
